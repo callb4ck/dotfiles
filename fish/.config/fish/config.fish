@@ -24,8 +24,8 @@ set -x WM "i3-gaps"
 command -v rockfetch > /dev/null && rockfetch
 
 
+
 #alias vim="nvim"
-alias ale="ssh sec@start.massinoviello.xyz"
 alias rainbow="figlet loooool coglione"
 alias magicctl="figlet wooooosh | lolcat"
 alias magictl="figlet wooooosh | lolcat"
@@ -33,6 +33,7 @@ alias vi="nvim"
 alias pi="sshpass -p 1 ssh pi@192.168.1.15"
 alias ls="ls --color"
 alias sl="ls --color"
+alias ll="ls -lah"
 alias em="emacs -nw"
 alias a="junest --"
 

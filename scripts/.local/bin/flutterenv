@@ -1,0 +1,33 @@
+#!/bin/sh
+
+export NIXPKGS_ALLOW_UNFREE=1
+
+#nix-shell -p sudo libcanberra-gtk3 packagekit pcre glib pkgconfig gtk3 clang ninja cmake flutter vscode --impure --run code
+
+nix-shell -p \
+    gdk-pixbuf \
+    glib \
+    epoxy \
+    atk \
+    harfbuzz \
+    pango \
+    cairo \
+    libselinux \
+    libsepol \
+    xorg.xorgproto \
+    xorg.libXft \
+    xorg.libXinerama \
+    pcre \
+    xorg.libX11.dev \
+    xorg.libX11 \
+    flutter \
+    cmake \
+    ninja \
+    clang \
+    pkg-config \
+    gtk3-x11 \
+    gtk3.dev \
+    util-linux \
+    vscode \
+    android-studio \
+    --impure --run code

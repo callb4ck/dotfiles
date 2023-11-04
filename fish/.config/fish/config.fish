@@ -59,6 +59,7 @@ set PATH $HOME/.dotnet $PATH
 set PATH $HOME/.local/share/junest/bin $PATH
 set PATH $HOME/.nimble/bin $PATH
 set PATH $HOME/.local/bin $PATH
+set PATH $HOME/.deno/bin $PATH
 
 set PATH /usr/local/sbin $PATH
 set PATH /usr/local/bin $PATH
@@ -87,3 +88,5 @@ set EDITOR $VISUAL
 #export PATH="$PATH:/opt/android-sdk/emulator"
 
 #export ANDROID_SDK_ROOT="/opt/android-sdk"
+
+cat ~/.memo 2> /dev/null

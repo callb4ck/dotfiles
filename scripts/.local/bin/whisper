@@ -1,0 +1,8 @@
+#!/bin/sh
+# distrobox_binary
+# name: whisper-container
+if [ -z "${CONTAINER_ID}" ]; then
+	exec /bin/distrobox-enter  -n whisper-container -- 		 /home/sec/whisperhome/.local/bin/whisper  "$@"
+else
+	exec /home/sec/whisperhome/.local/bin/whisper "$@"
+fi

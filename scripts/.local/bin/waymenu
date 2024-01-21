@@ -1,0 +1,16 @@
+#!/bin/sh
+
+disp=$(ls --color=none /tmp/.X11-unix/ | sort -r | head -n 1 | cut -c 2-)
+
+test -z "$disp" && disp="11"
+
+disp=$((disp+1))
+
+width=$(xdpyinfo | grep dimensions | cut -c 18-21)
+
+Xwayland -geometry "${width}x20" ":$disp" 2> /dev/null &
+
+while :
+do
+    DISPLAY=":$disp" dmenu "$@" 2> /dev/null && kill $! && break
+done

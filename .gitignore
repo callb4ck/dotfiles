@@ -1,0 +1,4 @@
+scripts/.local/bin/topgrade
+scripts/.local/bin/whisper
+scripts/.local/bin/pip*
+systemd-services/.config/systemd/user/default.target.wants

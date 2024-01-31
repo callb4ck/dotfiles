@@ -3,3 +3,4 @@ Name=YPaste
 Exec=ypaste
 Terminal=false
 Type=Application
+Icon=/home/sec/.local/share/icons/usr/YPaste.png

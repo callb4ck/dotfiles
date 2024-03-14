@@ -1,3 +1,7 @@
 #!/bin/sh
 sleep 1
-ydotool key 29:1 47:1 47:0 29:0
+# Fedora 39
+#ydotool key 29:1 47:1 47:0 29:0
+
+# VanillaOS 2 Orchid
+ydotool key CTRL+v

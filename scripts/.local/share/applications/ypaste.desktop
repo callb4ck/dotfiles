@@ -1,6 +1,10 @@
 [Desktop Entry]
 Name=YPaste
-Exec=ypaste
+# Fedora 39
+#Exec=ypaste
+
+# VanillaOS 2 Orchid
+Exec=/usr/share/apx/distrobox/distrobox-enter -n apx-vso-pico -- ypaste
 Terminal=false
 Type=Application
 Icon=/home/sec/.local/share/icons/usr/YPaste.png

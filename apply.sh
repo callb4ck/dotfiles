@@ -4,7 +4,7 @@ conf() {
     stow --target=$HOME $1
 }
 
-command -v stow > /dev/null || (echo 'Please install GNU Stow' && exit 1)
+command -v stow > /dev/null || echo 'Please install GNU Stow'
 
 conf fish
 conf scripts

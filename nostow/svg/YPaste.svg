@@ -1,51 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    width="271.46228"
-   height="268.71759"
-   viewBox="0 0 271.46227 268.71759"
+   height="271.46201"
+   viewBox="0 0 271.46227 271.46201"
    version="1.2"
    id="svg12"
-   sodipodi:docname="YPaste.svg"
-   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs12" />
-  <sodipodi:namedview
-     id="namedview12"
-     pagecolor="#505050"
-     bordercolor="#ffffff"
-     borderopacity="1"
-     inkscape:showpageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="1"
-     inkscape:deskcolor="#505050"
-     inkscape:zoom="1.6981957"
-     inkscape:cx="38.275918"
-     inkscape:cy="95.100936"
-     inkscape:window-width="1920"
-     inkscape:window-height="1131"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="surface11262" />
   <g
      id="surface11262"
      transform="translate(-44.268867,-18.760324)">
     <rect
-       style="fill:#f9f9f9;stroke:none;stroke-width:9;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:#f9f9f9;stroke:none;stroke-width:9.04584;stroke-linecap:square;stroke-dasharray:none"
        id="rect14"
        width="271.46228"
-       height="268.71759"
+       height="271.46201"
        x="44.268867"
        y="18.760324"
-       ry="28.612595"
+       ry="28.904814"
        rx="28.612598" />
     <path
        id="path14"
        style="fill:none;stroke:#000000;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-       d="m 140,200 c 0,0 80,0 80,0 M 189.99791,40 c 0,0 0,0 -30.00628,0 0,0 0,0 40.00837,0 m 0,0 c 0,0 20,0 20,20 m -80,0 c 0,0 0,-20 20,-20 m -20,120 c 0,0 80,0 80,0 m -80,-40 c 0,0 80,0 80,0 M 200,60 c 0,0 0,0 -60,0 0,0 0,0 80,0 m 40,20 c 0,0 0,-20 -20,-20 M 100,80 c 0,0 0,-20 20,-20 m 140,180 c 0,0 0,0 0,-140 M 120,260 c 0,0 120,0 120,0 0,0 20,0 20,-20 M 100,180 c 0,0 0,60 0,60 0,0 0,20 20,20 M 100,100 c 0,0 0,0 0,80" />
+       d="m 140,204.49133 c 0,0 80,0 80,0 M 189.99791,44.491327 c 0,0 0,0 -30.00628,0 0,0 0,0 40.00837,0 m 0,0 c 0,0 20,0 20,20 m -80,0 c 0,0 0,-20 20,-20 M 140,164.49133 c 0,0 80,0 80,0 m -80,-40 c 0,0 80,0 80,0 M 200,64.491327 c 0,0 0,0 -60,0 0,0 0,0 80,0 m 40,20 c 0,0 0,-20 -20,-20 m -140,20 c 0,0 0,-20 20,-20 M 260,244.49133 c 0,0 0,0 0,-140 m -140,160 c 0,0 120,0 120,0 0,0 20,0 20,-20 m -160,-60 c 0,0 0,60 0,60 0,0 0,20 20,20 m -20,-160 c 0,0 0,0 0,80" />
   </g>
 </svg>

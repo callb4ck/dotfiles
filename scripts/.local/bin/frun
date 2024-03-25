@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+# This is just a helper script to run flatpaks from terminal
+
+apps = `flatpak list --columns=name,application`.split "\n"
+
+apps.delete_at(0)
+
+map = {}
+
+apps.each do |app|
+  app = app.split
+
+  map[app[0]] = app[1]
+end
+
+exec "flatpak run #{map[ARGV[0]]} #{ARGV[1..].join ' '}"

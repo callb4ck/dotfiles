@@ -1,7 +1,7 @@
 #!/bin/sh
 
 checks() {
-	command -v stow > /dev/null || exec echo 'Please install GNU Stow'
+	command -v stow > /dev/null || exec echo 'Please install GNU Stow' # At this point the script has become so big that I'm wondering if I should just drop stow
 
 	[ `whoami` = 'root' ] && \
 		printf "You should avoid running this script as root\nQuit? [Y/n]: " && \
@@ -35,21 +35,58 @@ rootdo() {
 	"$auth" "$@"
 }
 
-detect_fedora() {
+fedora_eduroam() {
 
 	[ `whoami` != 'root' ] && authmsg=" (will require superuser authentication)"
 
-	. /etc/os-release
-	[ "$ID" = "fedora" ] && \
-		printf "Fedora detected!\nEduroam fix script available\nThe script enables potentially unsafe wireless connections.\nApply the script?$authmsg [y/N]: " && \
+	printf "Fedora detected!\nEduroam fix script available\nThe script enables potentially unsafe wireless connections.\nApply the script?$authmsg [y/N]: " && \
 		read doapplyeduroam && \
 		doapplyeduroam=`printf "$doapplyeduroam" | tr '[:upper:]' '[:lower:]'` && \
 		[ "$doapplyeduroam" = 'y' ] && \
 		echo && \
 		rootdo ./nostow/fedora/eduroam-wificonfig.sh && \
 		return
-
 	echo "Didn't apply eduroam fix script."
+}
+
+default_flathub() {
+	printf "Set flathub as default source in gnome-software? [Y/n]: " && \
+		read setflathub && \
+		setflathub=`printf "$setflathub" | tr '[:upper:]' '[:lower:]'` && \
+		[ "$setflathub" != n ] && \
+		dconf write /org/gnome/software/packaging-format-preference "['flatpak:flathub']" && \
+		echo "Flathub is now default source in gnome-software." && \
+		return
+
+	echo "Didn't set Flathub as default source in gnome-software."
+}
+
+detect_fedora() {
+
+	. /etc/os-release
+	[ "$ID" != "fedora" ] && return
+
+	fedora_eduroam
+
+	echo
+
+	default_flathub
+
+	echo
+}
+
+detect_gnome() {
+	[ "$DESKTOP_SESSION" != 'gnome' ] && return
+
+	printf "GNOME detected, do you want to enable the touchpad while typing? [Y/n]: " && \
+		read enabletouchpad && \
+		setflathub=`printf "$enabletouchpad" | tr '[:upper:]' '[:lower:]'` && \
+		[ "$enabletouchpad" != n ] && \
+		dconf write /org/gnome/desktop/peripherals/touchpad/disable-while-typing false && \
+		echo "Touchpad is now enabled while typing." && \
+		return
+
+	echo "Did not change disable-while-typing dconf setting."
 }
 
 apply() {
@@ -79,5 +116,7 @@ ask scripts "user scripts"
 ask systemd-services "user systemd services"
 
 detect fedora
+
+detect gnome
 
 printf '\nAll done!\n'

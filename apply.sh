@@ -1,13 +1,40 @@
 #!/bin/sh
 
-conf() {
-    stow --target=$HOME $1
+checks() {
+	command -v stow > /dev/null || exec echo 'Please install GNU Stow'
+
+	[ `whoami` = 'root' ] && \
+		printf "You should avoid running this script as root\nQuit? [Y/n]: " && \
+		read doquit && \
+		doquit=`printf "$doquit" | tr '[:upper:]' '[:lower:]'` && \
+		[ "$doquit" != 'n' ] && \
+		exec echo "Quitting"
 }
 
-command -v stow > /dev/null || echo 'Please install GNU Stow'
+apply() {
+	stow --target=$HOME $1
+}
 
-conf fish
-conf scripts
-conf systemd-services
+ask() {
+	printf "Apply $2? [y/N]: "
+	read doapply
 
-echo 'Done!'
+	doapply=`printf "$doapply" | tr '[:upper:]' '[:lower:]'`
+
+	[ "$doapply" = "y" ] && apply $1 && echo "Applied $2." && return
+
+	echo "Didn't apply $2."
+}
+
+
+
+
+checks
+
+ask fish "fish shell config"
+
+ask scripts "user scripts"
+
+ask systemd-services "user systemd services"
+
+echo 'All done!'

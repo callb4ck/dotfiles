@@ -4,8 +4,7 @@
 # to legacy networks configs such as eduroam or other
 # enterprise/institutional networks on Fedora
 
-[ "$(whoami)" = "root" ] || \
-    (echo "Run this script as root (sudo or doas)" && exit 1)
+[ "$(whoami)" != "root" ] && exec echo "Run this script as root (pkexec, doas or sudo)"
 
 update-crypto-policies --set LEGACY
 

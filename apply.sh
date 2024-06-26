@@ -90,7 +90,8 @@ detect_gnome() {
 }
 
 apply() {
-	stow --target=$HOME $1
+	[ "$1" = 'stow' ] && stow --target=$HOME $2 && return
+	[ "$1" = 'home' ] && ln -sf $(pwd)/_HOME/$2 $HOME/$2
 }
 
 ask() {
@@ -99,21 +100,22 @@ ask() {
 
 	doapply=`printf "$doapply" | tr '[:upper:]' '[:lower:]'`
 
-	[ "$doapply" = "y" ] && apply $1 && echo "Applied $2." && return
+	[ "$doapply" = "y" ] && apply $1 $2 && echo "Applied $3." && return
 
 	printf "Didn't apply $2.\n\n"
 }
 
 
 
-
 checks
 
-ask fish "fish shell config"
+ask stow fish "fish shell config"
 
-ask scripts "user scripts"
+ask stow scripts "user scripts"
 
-ask systemd-services "user systemd services"
+ask stow systemd-services "user systemd services"
+
+ask home .bashrc ".bashrc"
 
 detect fedora
 

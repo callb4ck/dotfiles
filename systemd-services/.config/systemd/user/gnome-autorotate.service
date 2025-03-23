@@ -1,0 +1,11 @@
+[Unit]
+Description=Starts my own autorotate for gnome
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=%h/.local/bin/gnome-autorotate.sh
+TimeoutSec=180
+
+[Install]
+WantedBy=default.target
